@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PC | 自己紹介</title>
     <meta name="description" content="tkvierの自己紹介。プロフィール、スキル、リンク一覧。">
-    <meta property="og:title" content="PC | 自己紹介">
-    <meta property="og:description" content="PCの自己紹介。プロフィール、スキル、リンク一覧。">
+    <meta property="og:title" content="tkvier | 自己紹介">
+    <meta property="og:description" content="tkvierの自己紹介。プロフィール、スキル、リンク一覧。">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/profile.jpg">
     <meta name="theme-color" content="#0b1020">
@@ -255,7 +255,10 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <div class="qr-code">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://tkvier.github.io" alt="QRコード">
+      <picture>
+        <source media="(max-width: 768px)" srcset="">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://tkvier.github.io" alt="QRコード">
+      </picture>
     </div>
   </body>
 </html>

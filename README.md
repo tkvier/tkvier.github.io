@@ -1,2 +1,2 @@
 #profile Web site
-プロフィール公開用Webササイトト
+プロフィール公開用Webサイト
