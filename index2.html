@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>tkvier | Profile</title>
+<link rel="icon" href="favicon.ico" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0b1020;
+  --border:rgba(255,255,255,0.12);
+  --text:#e7ebf3;
+  --muted:#a9b2c3;
+  --accent1:#6ea8ff;
+  --accent2:#9b7bff;
+  --shadow:0 10px 30px rgba(0,0,0,0.35);
+  --radius:16px;
+  --gap:24px;
+  --max:960px;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(80vw 80vh at 10% -10%, #3883ec 0%, transparent 60%),
+    radial-gradient(80vw 80vh at 120% 60%, #2a175a 0%, transparent 55%),
+    linear-gradient(180deg, #0b1020, #0b1020);
+    background-attachment: fixed;
+}
+a{color:inherit;text-decoration:none}
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:40px 20px;
+}
+.panel{
+  background:rgba(45, 43, 194, 0.1);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:var(--gap);
+  margin-bottom: 2rem; /* ← ここでパネル間のスペースを調整 */
+}
+.top-block{
+  display:flex;
+  align-items:center;
+  gap:var(--gap);
+  flex-wrap:wrap;
+}
+.avatar{
+  width:150px;
+  height:150px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.name-block{flex:1;}
+.name{
+  font-weight:800;
+  font-size:clamp(28px, 3.5vw, 40px);
+}
+.role{
+  color:var(--muted);
+  font-weight:600;
+  margin-bottom: 20px;
+}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:4px;
+}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.04);
+  color:#c9d2e6;
+  font-size:14px;
+}
+.qr{
+  width:120px;
+  height:120px;
+  background:#fff;
+  padding:6px;
+  border-radius:8px;
+}
+.bottom-block{
+  display:grid;
+  grid-template-columns:1fr 280px; /* 左が可変、右が固定幅 */
+  gap:var(--gap);
+}
+.bio{line-height:1.75;}
+.link-list{
+  display:grid;
+  gap:12px;
+}
+.link{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:linear-gradient(135deg, rgba(110,168,255,0.12), rgba(155,123,255,0.10));
+  transition:transform .15s ease;
+}
+.link:hover{transform:translateY(-2px);}
+footer{
+  color:var(--muted);
+  font-size:14px;
+  text-align:center;
+}
+@media(max-width:768px){
+  .bottom-block{grid-template-columns:1fr;}
+  .qr-code {display: none;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- 上段：画像・名前・QRコード -->
+  <section class="panel 1st">
+    <div class="top-block">
+      <div class="avatar">
+        <img src="images/profile.jpg" alt="プロフィール写真">
+      </div>
+      <div class="name-block">
+        <div class="name">tkvier</div>
+        <div class="role">もの作りが好きな普通の人</div>
+        <div class="meta" aria-label="補足情報">
+          <span class="chip">#Python</span>
+          <span class="chip">#Blender</span>
+          <span class="chip">#Stable Diffusion XL</span>
+        </div>
+      </div>
+      <div>
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/blank.png">
+          <!-- https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://tkvier.github.io -->
+          <img src="images/qr.png" alt="QRコード" class="qr-code">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下段：左に紹介文、右にリンク集 -->
+  <section class="panel 2nd">
+    <div class="bottom-block">
+      <div class="bio">
+        <p>ちょくちょくアプリ作ってるけど、結果が得られれば良いのでほぼハードコード<br>
+        公開してる自作アプリもUI雑め<br>
+        簡単に見栄えするGUI作れる方法無いものか</p>
+        <p>Blenderで3Dモデル作ったりしてるけどまだまだ未熟<br>
+        現在は停滞中</p>
+        <p>画像生成AIのモデルも作ってる（RTX3060 12GB使用）<br>
+        昔は公開してたけど、最近は大手のAI使う方が性能良いので今は基本自分用途</p>
+      </div>
+      <div class="link-list">
+        <a class="link" href="https://x.com/tkvier" target="_blank" rel="noopener">X(旧Twitter) 🔗</a>
+        <a class="link" href="https://note.com/tkvier" target="_blank">note.com 🔗</a>
+        <a class="link" href="https://civitai.com/user/tkvier" target="_blank">Civitai 🔗</a>
+        <a class="link" href="https://github.com/tkvier" target="_blank">GitHub 🔗</a>
+        <a class="link" href="https://huggingface.co/tkvier" target="_blank">HuggingFace 🔗</a>
+      </div>
+    </div>
+  </section>
+    <footer aria-label="フッター">
+    © <span id="year"></span> tkvier. All rights reserved.
+    </footer>
+  <script>
+    // 年表示
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</div>
+</body>
+</html>
