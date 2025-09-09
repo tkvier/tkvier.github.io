@@ -117,10 +117,13 @@ a{color:inherit;text-decoration:none}
   margin-bottom: 2rem; /* ← ここでパネル間のスペースを調整 */
 }
 .content-title{
+  display: flex;  /* 横並びにする */
   font-weight:800;
   font-size:clamp(20px, 3vw, 28px);
   margin-bottom:8px;
+  justify-content: space-between; /* 左右に配置 */
 }
+.content-title img{width:32px;height:32px;}
 .link-list{gap:20px;}
 .link-list img{width:32px;height:32px;}
 .link-list img:hover{transform:translateY(-2px);}
@@ -159,9 +162,6 @@ footer{
       <div class="link-list">
         <a href="https://x.com/tkvier" target="_blank" rel="noopener"><img src="favicon/twitter.3.png" alt="X(旧Twitter)"></a>
         <a href="https://note.com/tkvier" target="_blank"><img src="favicon/note.png" alt="note.com"></a>
-        <a href="https://github.com/tkvier" target="_blank"><img src="favicon/github-dark.png" alt="GitHub"></a>
-        <a href="https://huggingface.co/tkvier" target="_blank"><img src="favicon/HuggingFace.ico" alt="HuggingFace"></a>
-        <a href="https://civitai.com/user/tkvier" target="_blank"><img src="favicon/civitai.ico" alt="Civitai"></a>
       </div>
     </div>
     <div class="qr-code">
@@ -176,7 +176,12 @@ footer{
   <!-- コンテンツパネル -->
   <section class="content-panel">
     <div class="content-bio">
-      <div class="content-title">ソフトウェア</div><hr>
+      <div class="content-title">
+        ソフトウェア
+        <span>
+          <a href="https://github.com/tkvier" target="_blank"><img src="favicon/github-dark.png" alt="GitHub"></a>
+        </span>
+      </div><hr>
       <p>ちょくちょくアプリ作ってるけど、結果が得られれば良いのでほぼハードコード<br>
       公開してる自作アプリもUI雑め<br>
       簡単に見栄えするGUI作れる方法無いものか</p>
@@ -191,10 +196,14 @@ footer{
 
   <section class="content-panel">
     <div class="content-bio">
-      <div class="content-title">3D CG</div><hr>
-        <p>Blenderで3Dモデル作ったりしてるけどまだまだ未熟<br>
-        現在は停滞中</p>
-        <p>3Dプリンタ用のモデルも作るけど自分用</p>
+      <div class="content-title">
+        3D CG
+        <span>
+        </span>
+      </div><hr>
+      <p>Blenderで3Dモデル作ったりしてるけどまだまだ未熟<br>
+      現在は停滞中</p>
+      <p>3Dプリンタ用のモデルも作るけど自分用</p>
     </div>
     <div class="content-tag">
       <div class="meta" aria-label="補足情報">
@@ -208,7 +217,13 @@ footer{
 
   <section class="content-panel">
     <div class="content-bio">
-      <div class="content-title">画像生成AIモデル</div><hr>
+      <div class="content-title">
+        画像生成AIモデル
+        <span>
+          <a href="https://civitai.com/user/tkvier" target="_blank"><img src="favicon/civitai.ico" alt="Civitai"></a>
+          <a href="https://huggingface.co/tkvier" target="_blank"><img src="favicon/HuggingFace.ico" alt="HuggingFace"></a>
+        </span>
+        </div><hr>
         <p>画像生成AIのモデルも作ってる（RTX3060 12GB使用）<br>
         昔は公開してたけど、最近は大手のAI使う方が性能良いので今は基本自分用途</p>
     </div>
